@@ -28,4 +28,5 @@ notes.md
 *.py
 *.old
 
-test_data*
+*.txt
+sequencing_summary_*
