@@ -1,0 +1,31 @@
+# Ignore compiled binaries
+/target/
+
+# Ignore Cargo.lock file
+Cargo.lock
+
+# Ignore IDE/Editor specific files
+.idea/
+.vscode/
+*.rs.bk
+
+# Ignore build output
+/target/
+
+# Ignore test data
+/test/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore any temporary files
+*.tmp
+
+output.json
+*_output.md
+notes.md
+*.py
+*.old
+
+test_data*

@@ -1,0 +1,11 @@
+[package]
+name = "summary_simulator"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = 3
+
+[dependencies]
+rand = "0.8"
+rand_distr = "0.4"
