@@ -142,25 +142,40 @@ impl TestData {
     }
 }
 
-fn print_usage(program: &str) {
-    println!("Usage: {} <q-score threshold> <most common barcode> <number of rows>", program);
-    println!("       {} -h | --help", program);
+fn print_help() {
+    println!("Usage: <q-score threshold> <most common barcode> <number of reads>");
+    println!("    <q-score threshold>           the minimum q-score determining filtering threshold");
+    println!("    <most common barcode>         the barcode selected to be most present in the data");
+    println!("    <number of reads>             the number of reads to output");
+    println!("Options:");
+    println!("  -h, --help                  print this help message");
+    println!("  -v, --version               print version information");
+}
+
+fn print_version() {
+    println!("summary_simulator version {}", env!("CARGO_PKG_VERSION"));
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args: Vec<String> = env::args().collect();
-    if args.len() == 2 && (args[1] == "-h" || args[1] == "--help") {
-        print_usage(&args[0]);
-        return Ok(());
-    }
-    
     if args.len() != 4 {
-        eprintln!("Invalid number of arguments.");
-        print_usage(&args[0]);
-        return Ok(());
+        match args.len() {
+            2 if (args[1] == "-h" || args[1] == "--help") => {
+                print_help();
+                return Ok(());
+            }
+            2 if (args[1] == "-v" || args[1] == "--version") => {
+                print_version();
+                return Ok(());
+            }
+            _ => {
+                eprintln!("Invalid number of arguments. Use -h or --help for usage information.");
+                std::process::exit(1);
+            }
+        }
     }
 
-    let filename = "test_data.txt";
+    let filename = "sequencing_summary_sim_data.txt";
 
     let qscore_threshold: f32 = match args[1].parse() {
         Ok(value) => value,
