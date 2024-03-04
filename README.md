@@ -1,6 +1,8 @@
 # summary_simulator
 
-Summary Simulator is a tool for generating synthetic data resembling features of Oxford Nanopore sequencing summary files. It aims to provide a subset of data useful for downstream testing purposes, namely my other tool [`summary_metrics`](https://github.com/sirselim/summary_metrics) - which quickly generates some useful statistics from sequencing summary text files.
+Summary Simulator is a tool for generating synthetic data resembling features of Oxford Nanopore sequencing summary files.
+It aims to provide a subset of data useful for downstream testing purposes, namely my other tool [`summary_metrics`](https://github.com/sirselim/summary_metrics),
+which quickly generates some useful statistics from sequencing summary text files.
 
 ## Features
 
@@ -11,23 +13,25 @@ Summary Simulator is a tool for generating synthetic data resembling features of
 
 ## Installation
 
-1. Clone the repository:
+- Clone the repository:
 
 ```bash
 git clone https://github.com/your_username/summary_simulator.git
 ```
 
-Navigate to the project directory:
+- Navigate to the project directory:
 
 ```bash
 cd summary_simulator
 ```
 
-Build the project:
+- Build the project:
 
 ```bash
 cargo build --release
 ```
+
+You will find the binary at `./target/release/summary_simulator`.
 
 ## Usage
 
