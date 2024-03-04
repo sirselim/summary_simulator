@@ -55,6 +55,13 @@ Generate 1000000 rows of test data with a q-score threshold of 9.0 and the most 
 ./summary_simulator 9.0 barcode01 1000000
 ```
 
+## To Do
+
+- [X] ~~add proper help options~~
+- [ ] generate more columns for sequencing summary (if useful)
+- [ ] work on error handling
+- [ ] further performance optimisations
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
